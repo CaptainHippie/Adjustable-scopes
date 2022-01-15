@@ -34,6 +34,13 @@
 		<text>Due to technical limitations, certain scopes like the ACOG, Susat has to be put further away by default in order to look normal. This setting is for those</text>
 	</string>
 
+	<string id="ui_mcm_scop_pistol_fov">
+		<text>Pistols</text>
+	</string>
+	<string id="ui_mcm_scop_pistol_fov_desc">
+		<text>slider for how close pistols are</text>
+	</string>
+
 	<string id="ui_mcm_scop_grenade_fov">
 		<text>Grenade Launcher</text>
 	</string>

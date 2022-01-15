@@ -3,6 +3,7 @@ local defaults = {
     ["iron_fov"] = 0.45,
     ["scope_fov"] = 0.4,
     ["bad_scope_fov"] = 0.2,
+    ["pistol_fov"] = 0.6,
     ["grenade_fov"] = 0.45
 }
 
@@ -16,6 +17,7 @@ function on_mcm_load()
 			{id = "iron_fov", type = "track", val = 2, min=0.1,max=1,step=0.01, def = 0.45},
 			{id = "scope_fov", type = "track", val = 2, min=0.1,max=1,step=0.01, def = 0.4},
             {id = "bad_scope_fov", type = "track", val = 2, min=0.1,max=1,step=0.01, def = 0.2},
+            {id = "pistol_fov", type = "track", val = 2, min=0.1,max=1,step=0.01, def = 0.6},
             {id = "grenade_fov", type = "track", val = 2, min=0.1,max=1,step=0.01, def = 0.45},
         }
     }
