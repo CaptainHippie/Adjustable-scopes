@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="windows-1251"?>
+
+<!-- 
+	Anomaly Modconfiguration Menu strings
+	
+-->
+
+<string_table>
+
+
+	<string id="ui_mcm_scop_title">
+		<text>Настройки Scope HUD</text>
+	</string>	
+	<string id="ui_mcm_menu_scop">
+		<text>Настроить прицел HUD</text>
+	</string>
+
+	<string id="ui_mcm_scop_iron_fov">
+		<text>Прицелы и встроенные 3D-прицелы</text>
+	</string>
+	<string id="ui_mcm_scop_iron_fov_desc">
+		<text>более низкие значения приближают прицел при использовании металлических прицелов и встроенных трехмерных прицелов</text>
+	</string>
+
+	<string id="ui_mcm_scop_scope_fov">
+		<text>3D прицелы</text>
+	</string>
+	<string id="ui_mcm_scop_scope_fov_desc">
+		<text>более низкие значения приближают прицел при использовании 3D-прицелов</text>
+	</string>
+
+	<string id="ui_mcm_scop_bad_scope_fov">
+		<text>Плохие 3D оптические прицелы</text>
+	</string>
+	<string id="ui_mcm_scop_bad_scope_fov_desc">
+		<text>Из-за технических ограничений некоторые прицелы, такие как ACOG, Susat по умолчанию должны располагаться дальше, чтобы они выглядели нормально. Этот параметр предназначен для тех, кто</text>
+	</string>
+
+	<string id="ui_mcm_scop_pistol_fov">
+		<text>пистолеты</text>
+	</string>
+	<string id="ui_mcm_scop_pistol_fov_desc">
+		<text>ползунок для того, насколько близко пистолеты</text>
+	</string>
+
+	<string id="ui_mcm_scop_grenade_fov">
+		<text>Гранатомет</text>
+	</string>
+	<string id="ui_mcm_scop_grenade_fov_desc">
+		<text>более низкие значения приближают прицел при использовании присоединенного гранатомета</text>
+	</string>
+
+	<string id="ui_mcm_scop_alt_fov">
+		<text>Альтернативные прицелы</text>
+	</string>
+	<string id="ui_mcm_scop_alt_fov_desc">
+		<text>более низкие значения приближают прицел, когда вы используете альтернативные прицелы</text>
+	</string>
+	
+	<string id="ui_mcm_scop_keybind_add">
+		<text>Отнесите оружие подальше</text>
+	</string>
+	<string id="ui_mcm_scop_keybind_add_desc">
+		<text>Отодвигает оружие, которое вы держите, за счет увеличения hud fov</text>
+	</string>
+	
+	<string id="ui_mcm_scop_keybind_subtract">
+		<text>Поднесите оружие ближе</text>
+	</string>
+	<string id="ui_mcm_scop_keybind_subtract_desc">
+		<text>Приближает оружие, которое вы держите, уменьшая hud fov</text>
+	</string>
+	
+	<string id="ui_mcm_scop_keybind_reset">
+		<text>Сбросить текущее оружие</text>
+	</string>
+	<string id="ui_mcm_scop_keybind_reset_desc">
+		<text>Возвращает ваш зум hud fov на оружии, которое вы держите, обратно в нормальное состояние.</text>
+	</string>
+	
+</string_table>
