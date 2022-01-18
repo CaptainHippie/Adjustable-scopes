@@ -36,6 +36,13 @@
 		<text>»з-за технических ограничений некоторые прицелы, такие как ACOG, Susat по умолчанию должны располагатьс€ дальше, чтобы они выгл€дели нормально. Ётот параметр предназначен дл€ тех, кто</text>
 	</string>
 
+	<string id="ui_mcm_scop_pistol_fov">
+		<text>пистолеты</text>
+	</string>
+	<string id="ui_mcm_scop_pistol_fov_desc">
+		<text>ползунок дл€ того, насколько близко пистолеты</text>
+	</string>
+
 	<string id="ui_mcm_scop_grenade_fov">
 		<text>√ранатомет</text>
 	</string>
@@ -43,4 +50,35 @@
 		<text>более низкие значени€ приближают прицел при использовании присоединенного гранатомета</text>
 	</string>
 
+	<string id="ui_mcm_scop_alt_fov">
+		<text>јльтернативные прицелы</text>
+	</string>
+	<string id="ui_mcm_scop_alt_fov_desc">
+		<text>более низкие значени€ приближают прицел, когда вы используете альтернативные прицелы</text>
+	</string>
+	
+	<string id="ui_mcm_scop_keybind_add">
+		<text>ќтнесите оружие подальше</text>
+	</string>
+	<string id="ui_mcm_scop_keybind_add_desc">
+		<text>ќтодвигает оружие, которое вы держите, за счет увеличени€ hud fov</text>
+	</string>
+	
+	<string id="ui_mcm_scop_keybind_subtract">
+		<text>ѕоднесите оружие ближе</text>
+	</string>
+	<string id="ui_mcm_scop_keybind_subtract_desc">
+		<text>ѕриближает оружие, которое вы держите, уменьша€ hud fov</text>
+	</string>
+	
+	<string id="ui_mcm_scop_keybind_reset">
+		<text>—бросить текущее оружие</text>
+	</string>
+	<string id="ui_mcm_scop_keybind_reset_desc">
+		<text>¬озвращает ваш зум hud fov на оружии, которое вы держите, обратно в нормальное состо€ние.</text>
+	</string>
+
+	<string id="ui_mcm_scop_snk_update_mcm">
+		<text>ќбновите MCM, чтобы увидеть эту функцию. ѕо умолчанию клавиша Numpad + и - и Backspace дл€ сброса текущего оружи€</text>
+	</string>
 </string_table>

@@ -77,5 +77,8 @@
 	<string id="ui_mcm_scop_keybind_reset_desc">
 		<text>Возвращает ваш зум hud fov на оружии, которое вы держите, обратно в нормальное состояние.</text>
 	</string>
-	
+
+	<string id="ui_mcm_scop_snk_update_mcm">
+		<text>Обновите MCM, чтобы увидеть эту функцию. По умолчанию клавиша Numpad + и - и Backspace для сброса текущего оружия</text>
+	</string>
 </string_table>
