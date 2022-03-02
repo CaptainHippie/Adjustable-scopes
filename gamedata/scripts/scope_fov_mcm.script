@@ -17,6 +17,10 @@ local zoomed = false
 ini_fov = ini_file_ex("items\\weapon_fov_values.ltx")
 local mcm_keybinds = ui_mcm and ui_mcm.key_hold
 
+local temp_fov
+local saved_custom = {}
+local saved_gls = {}
+
 function fetch_values()
 	zoom_in_iron = ui_mcm.get("scop/iron_fov") or zoom_in_iron
 	zoom_in_scope = ui_mcm.get("scop/scope_fov") or zoom_in_scope
@@ -47,9 +51,10 @@ local function on_option_change(mcm)
 	end
 end
 
-local temp_fov
-local saved_custom = {}
-local saved_gls = {}
+function execute_hud_fov(fov_value)
+	exec_console_cmd("hud_fov " .. fov_value)
+	temp_fov = fov_value
+end
 
 function zoom_in()
 zoomed = true
@@ -65,54 +70,45 @@ if (db.actor:active_detector()) then return end
 
 	if weapon and weapon:weapon_in_grenade_mode() then
 		if saved_gls[parent] then
-			exec_console_cmd("hud_fov " .. saved_gls[parent])
+			execute_hud_fov(saved_gls[parent])
 		else
-			exec_console_cmd("hud_fov " .. gl_fov)
+			execute_hud_fov(gl_fov)
 		end
-		temp_fov = saved_gls[parent] or gl_fov
 		return
 	end
 	if saved_custom[weapon:section()] then
-		exec_console_cmd("hud_fov " .. saved_custom[weapon:section()])
-		temp_fov = saved_custom[weapon:section()]
+		execute_hud_fov(saved_custom[weapon:section()])
 		return
 	end
 local iron_fov = ini_fov:r_float_ex(parent, "iron")
 	if sec_exist and scope then
 	local custom_fov = ini_fov:r_float_ex(parent, scope)
 		if scope and custom_fov then
-			exec_console_cmd("hud_fov " .. custom_fov)
-			temp_fov = custom_fov
+			execute_hud_fov(custom_fov)
 			return
 		end
 	end
 	if sec_exist and (not scope) and iron_fov then
-		exec_console_cmd("hud_fov " .. iron_fov)
-		temp_fov = iron_fov
+		execute_hud_fov(iron_fov)
 		return
 	end
 	if is_pistol then
-		exec_console_cmd("hud_fov " .. zoom_in_pistol)
-		temp_fov = zoom_in_pistol
+		execute_hud_fov(zoom_in_pistol)
 		return
 	end
 	if scope then
 		local scope_bad = ini_fov:r_bool_ex("bad_scopes", scope)
 		if scope_bad and (not two_dim) then
-			exec_console_cmd("hud_fov " .. zoom_bad_scope)
-			temp_fov = zoom_bad_scope
-		else exec_console_cmd("hud_fov " .. zoom_in_scope)
-			temp_fov = zoom_in_scope
+			execute_hud_fov(zoom_bad_scope)
+		else execute_hud_fov(zoom_in_scope)
 		end
 	else
-		exec_console_cmd("hud_fov " .. zoom_in_iron)
-		temp_fov = zoom_in_iron
+		execute_hud_fov(zoom_in_iron)
 	end
 end
 
 local function zoom_out()
-	exec_console_cmd("hud_fov " .. default_hud_fov)
-	temp_fov = default_hud_fov
+	execute_hud_fov(default_hud_fov)
 	zoomed = false
 end
 
@@ -124,11 +120,10 @@ local function on_key_release(key)
 	if key == bind_to_dik(key_bindings.kWPN_FUNC) and zoomed then
 		if weapon:weapon_in_grenade_mode() then
 			if saved_gls[parent] then
-				exec_console_cmd("hud_fov " .. saved_gls[parent])
+				execute_hud_fov(saved_gls[parent])
 			else
-				exec_console_cmd("hud_fov " .. gl_fov)
+				execute_hud_fov(gl_fov)
 			end
-			temp_fov = saved_gls[parent] or gl_fov
 			return
 		else zoom_in()
 		end
@@ -142,13 +137,11 @@ function increase_hud_fov()
 	local saved_fov = saved_custom[weapon:section()] or temp_fov
 	local saved_gl_fov = saved_gls[parent] or temp_fov
 	if weapon:weapon_in_grenade_mode() then
-		exec_console_cmd("hud_fov " .. (saved_gl_fov + 0.01))
+		execute_hud_fov((saved_gl_fov + 0.01))
 		saved_gls[parent] = saved_gl_fov + 0.01
-		temp_fov = saved_gl_fov + 0.01
 	else
-		exec_console_cmd("hud_fov " .. (saved_fov + 0.01))
+		execute_hud_fov((saved_fov + 0.01))
 		saved_custom[weapon:section()] = saved_fov + 0.01
-		temp_fov = saved_fov + 0.01
 	end
 end
 
@@ -159,13 +152,11 @@ function decrease_hud_fov()
 	local saved_fov = saved_custom[weapon:section()] or temp_fov
 	local saved_gl_fov = saved_gls[parent] or temp_fov
 	if weapon:weapon_in_grenade_mode() then
-		exec_console_cmd("hud_fov " .. (saved_gl_fov - 0.01))
+		execute_hud_fov((saved_fov - 0.01))
 		saved_gls[parent] = saved_gl_fov - 0.01
-		temp_fov = saved_gl_fov - 0.01
 	else
-		exec_console_cmd("hud_fov " .. (saved_fov - 0.01))
+		execute_hud_fov((saved_fov - 0.01))
 		saved_custom[weapon:section()] = saved_fov - 0.01
-		temp_fov = saved_fov - 0.01
 	end
 end
 
