@@ -1,4 +1,4 @@
-===ADJUSTABLE SCOPE VIEW 1.7===
+===ADJUSTABLE SCOPE VIEW 1.8===
 
 Conflicts and risks: 
 Important: If you're using blindsides reanimtions, this must be installed only after blindsides reanim or the best option is follow the exact load order in EFT alternate sights mod description. Its a QoL script which only modifies hud_fov values under conditions so you're safe and you can add/remove it anytime
@@ -17,6 +17,7 @@ What the mod does :
 7. Grenade lauchers and pistols also gets a unique slider after latest update
 
 Changelog :
+1.8 - Improved Russian translation thanks to EverybodyLies#9816 on anomaly discord. Also a little bit of script cleanup
 1.7 -Major update. Refactored majority of the code, added ability to dynamically adjust zoom hud fov on the fly using keybinds configurable via MCM. Also added sliders for pistols and enabled wildcard loading for custom ltx files
 1.6 - fixed a bug where the zoomed in hud fov will be saved upon death or loading save. Also made an exception for when pistols are used with devices
 1.5 hotfix - fixed Russian translation thanks to xcvb and haruwu
@@ -26,7 +27,6 @@ v1.4 - Fixed hud fov resetting, added grenade launcher slider, added russian tra
 v1.3 - Alternate sights(only for the 2D scopes) will ignore the 3rd slider(intended for BaS), changed default values
 v1.2 - Added full customizability, and the values are inside an ltx for easier access. You can give custom hud_fov values for any weapon and their scoped variants in a conflict free manner
 v1.1 - Added method to change the sliders for specific guns
-
 
 Credits:
 HarukaSai for the original idea and script which I only modified :)
